@@ -56,8 +56,9 @@
 #include <mmsystem.h>
 #include <ddraw.h>
 #include "audio.h"
-#include "gamelib.h"
 #include "mygame.h"
+#include "gamelib.h"
+
 
 namespace game_framework {
 /////////////////////////////////////////////////////////////////////////////
@@ -192,9 +193,7 @@ void CGameStateOver::OnShow()
 
 CGameStateRun::CGameStateRun(CGame *g)
 : CGameState(g), NUMBALLS(500)
-{
-	ball = new CPill [NUMBALLS];
-}
+{	ball = new CPill [NUMBALLS];}
 
 CGameStateRun::~CGameStateRun()
 {
@@ -255,7 +254,7 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	//
 	// 移動擦子
 	//
-	p.OnMove(&map, &hero);
+	//p.OnMove(&map, &hero);
 	hero.OnMove(&map);
 	gh.OnMove(&map);
 	//
@@ -283,7 +282,7 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	//
 	// 移動彈跳的球
 	//
-	bball.OnMove();
+	//bball.OnMove();
 }
 
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
@@ -304,7 +303,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	map.LoadBitmap();
 	hero.LoadBitmap();
 	background.LoadBitmap(IDB_BACKGROUND);		
-	p.LoadBitmap();
+	//p.LoadBitmap();
 	// 載入背景的圖形
 	//
 	// 完成部分Loading動作，提高進度
@@ -317,7 +316,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	help.LoadBitmap(IDB_HELP,RGB(255,255,255));				// 載入說明的圖形
 	corner.LoadBitmap(IDB_CORNER);							// 載入角落圖形
 	corner.ShowBitmap(background);							// 將corner貼到background
-	bball.LoadBitmap();										// 載入圖形
+	//bball.LoadBitmap();										// 載入圖形
 	hits_left.LoadBitmap();									
 	CAudio::Instance()->Load(AUDIO_DING,  "sounds\\ding.wav");	// 載入編號0的聲音ding.wav
 	CAudio::Instance()->Load(AUDIO_LAKE,  "sounds\\lake.mp3");	// 載入編號1的聲音lake.mp3
@@ -411,6 +410,6 @@ void CGameStateRun::OnShow()
 	corner.SetTopLeft(SIZE_X-corner.Width(), SIZE_Y-corner.Height());
 	//corner.ShowBitmap();
 	gh.OnShow(&map);
-	p.OnShow(&map);
+	//p.OnShow(&map);
 }
 }

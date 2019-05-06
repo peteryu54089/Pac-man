@@ -242,8 +242,7 @@ int CAnimation::Width()
 
 CMovingBitmap CInteger::digit[11];
 
-CInteger::CInteger(int digits)
-: NUMDIGITS(digits)
+CInteger::CInteger(int digits): NUMDIGITS(digits)
 {
 	isBmpLoaded = false;
 }

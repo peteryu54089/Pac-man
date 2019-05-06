@@ -1,8 +1,6 @@
-#ifndef MAP_H__
 
 #include "Map.h"
-#endif //Map
-#pragma once
+#include "CCharacter.h"
 namespace game_framework {
 
 	class Ghost{
@@ -32,14 +30,14 @@ namespace game_framework {
 		
 	};
 
-	class Pinky : public Ghost {
-	public:
-		//void LoadBitmap();
-		void OnMove(Map *m, CHero *hero); //pinky不同移動方式
-	private:
-		CMovingBitmap bmp;
-		
-	};
+	//class Pinky : public Ghost {
+	//public:
+	//	//void LoadBitmap();
+	//	void OnMove(Map *m, CHero *hero); //pinky不同移動方式
+	//private:
+	//	CMovingBitmap bmp;
+	//	
+	//};
 
 
 }

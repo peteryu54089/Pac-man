@@ -28,7 +28,8 @@
  *   2006-02-08 V4.2
  *      1. Rename OnInitialUpdate() -> OnInit().
  *      2. Replace AUDIO_CANYON as AUDIO_NTUT.
- *      3. Add help bitmap to CGameStateRun.
+ *      3. Add hel
+ bitmap to CGameStateRun.
  *   2006-09-09 V4.3
  *      1. Rename Move() and Show() as OnMove and OnShow() to emphasize that they are
  *         event driven.
@@ -37,10 +38,13 @@
  *      2. Replace the demonstration of animation as a new bouncing ball.
  *      3. Use ShowInitProgress(percent) to display loading progress.
 */
+#ifndef MYGAME_H__
+#define MYGAME_H__
+
 #include "Map.h"
 #include "CHero.h"
 #include "CPill.h"
-#include "CBouncingBall.h"
+//#include "CBouncingBall.h"
 #include "Ghost.h"
 
 
@@ -103,12 +107,12 @@ namespace game_framework {
 		CMovingBitmap	corner;		// 角落圖
 		CHero			hero;		// 拍子
 		CInteger		hits_left;	// 剩下的撞擊數
-		CBouncingBall   bball;		// 反覆彈跳的球
+		//CBouncingBall   bball;		// 反覆彈跳的球
 
 
 		Map map;
 		Ghost gh;
-		Pinky p;
+		//Pinky p;
 	};
 
 	/////////////////////////////////////////////////////////////////////////////
@@ -129,3 +133,4 @@ namespace game_framework {
 	};
 
 }
+#endif

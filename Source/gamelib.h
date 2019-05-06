@@ -66,6 +66,9 @@
 // 定義遊戲可設定的環境與條件
 /////////////////////////////////////////////////////////////////////////////
 
+#ifndef GAMELIB_H__
+#define GAMELIB_H__
+
 #define SIZE_X				 800		// 設定遊戲畫面的解析度為640x480
 #define SIZE_Y				 600		// 註：若不使用標準的解析度，則不能切換到全螢幕
 #define OPEN_AS_FULLSCREEN	 false		// 是否以全螢幕方式開啟遊戲
@@ -250,7 +253,7 @@ private:
 
 class CInteger {
 public:
-	CInteger(int=5);			// default 5 digits
+	CInteger(int=5);		// default 5 digits
 	void Add(int n);			// 增加整數值
 	int  GetInteger();			// 回傳整數值
 	void LoadBitmap();			// 載入0..9及負號之圖形
@@ -346,3 +349,5 @@ private:
 };
 
 }
+
+#endif

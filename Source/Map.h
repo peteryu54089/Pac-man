@@ -1,4 +1,9 @@
-#pragma once
+//#pragma once
+#ifndef MAP_H__
+#define MAP_H__
+#include "gamelib.h"
+
+
 namespace game_framework{
 
 	class Map {
@@ -21,3 +26,5 @@ namespace game_framework{
 	};
 
 }
+
+#endif

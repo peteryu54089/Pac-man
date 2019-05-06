@@ -6,8 +6,6 @@
 #include "gamelib.h"
 #include "CHero.h"
 #include "Ghost.h"
-#include "time.h"
-#include "stdlib.h"
 namespace game_framework {
 	Ghost::Ghost() { Initialize(); }
 	void Ghost::Initialize() 
@@ -97,21 +95,21 @@ namespace game_framework {
 
 
 
-	//
-	void Pinky::OnMove(Map *m, CHero *hero) //to the same col
-	{
-		if (x - hero->GetX1()>0) //  
-		{
-			while (m->isEmpty(x - 10, y)) 
-			{
-				x -= 10;
-			}
-			while (m->isEmpty(x, y + 10)) { y += 10; }
-			//OnMove(m, hero);
-		}
-		
+	////
+	//void Pinky::OnMove(Map *m, CHero *hero) //to the same col
+	//{
+	//	if (x - hero->GetX1()>0) //  
+	//	{
+	//		while (m->isEmpty(x - 10, y)) 
+	//		{
+	//			x -= 10;
+	//		}
+	//		while (m->isEmpty(x, y + 10)) { y += 10; }
+	//		//OnMove(m, hero);
+	//	}
+	//	
 
-		
-	
-	} //pinky不同移動方式
+	//	
+	//
+	//} //pinky不同移動方式
 }

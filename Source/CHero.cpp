@@ -3,7 +3,7 @@
 #include <mmsystem.h>
 #include <ddraw.h>
 #include "audio.h"
-#include "gamelib.h"
+//#include "gamelib.h"
 //#include "mygame.h"
 
 #include "CHero.h"
@@ -18,25 +18,6 @@ namespace game_framework {
 		Initialize();
 	}
 
-	int CHero::GetX1()
-	{
-		return x;
-	}
-
-	int CHero::GetY1()
-	{
-		return y;
-	}
-
-	int CHero::GetX2()
-	{
-		return x + animation.Width();
-	}
-
-	int CHero::GetY2()
-	{
-		return y + animation.Height();
-	}
 
 	void CHero::Initialize()
 	{
@@ -50,14 +31,14 @@ namespace game_framework {
 
 	void CHero::LoadBitmap()
 	{
-		animation.AddBitmap(IDB_BITMAP5, RGB(255, 255, 255));
+		bmp1.LoadBitmap(IDB_BITMAP5, RGB(255, 255, 255));
 
 	}
 
 	void CHero::OnMove(Map *m)
 	{
 		const int STEP_SIZE = 10;
-		animation.OnMove();
+		//animation.OnMove();
 		//oldState is the last moving direction
 		if ((isMovingLeft || oldState == 1) &&x>0&&m->isEmpty(x-10,y) )  // isempty
 		{
@@ -94,36 +75,4 @@ namespace game_framework {
 		}
 	}
 
-	void CHero::SetMovingDown(bool flag)
-	{
-		isMovingDown = flag;
-	}
-
-	void CHero::SetMovingLeft(bool flag)
-	{
-		isMovingLeft = flag;
-	}
-
-	void CHero::SetMovingRight(bool flag)
-	{
-		isMovingRight = flag;
-	}
-
-	void CHero::SetMovingUp(bool flag)
-	{
-		isMovingUp = flag;
-	}
-
-	void CHero::SetXY(int nx, int ny)
-	{
-		x = nx; y = ny;
-	}
-
-	void CHero::OnShow(Map *m)
-	{
-
-		animation.SetTopLeft(m->ScreenX(x), m->ScreenY(y));
-
-		animation.OnShow();
-	}
 }

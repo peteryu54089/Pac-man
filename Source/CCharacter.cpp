@@ -1,5 +1,8 @@
 	/////////////////////////////////////////////////////////////////////////////
 #include "stdafx.h"
+#include "Resource.h"
+#include <mmsystem.h>
+#include <ddraw.h>
 #include "CCharacter.h"
 namespace game_framework {
 	CCharacter::CCharacter()
@@ -19,12 +22,12 @@ namespace game_framework {
 
 	int CCharacter::GetX2()
 	{
-		return x + bmp.Width();
+		return x + bmp1.Width();
 	}
 
 	int CCharacter::GetY2()
 	{
-		return y + bmp.Height();
+		return y + bmp1.Height();
 	}
 
 	void CCharacter::Initialize()
@@ -86,7 +89,7 @@ namespace game_framework {
 
 	void CCharacter::OnShow(Map *m)
 	{
-		bmp.SetTopLeft(m->ScreenX(x), m->ScreenY(y));
-		bmp.OnShow();
+		bmp1.SetTopLeft(m->ScreenX(x), m->ScreenY(y));
+		bmp1.ShowBitmap();
 	}
 }
